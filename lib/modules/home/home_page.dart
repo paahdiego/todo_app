@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Modular.to.navigate('/');
               },
-              child: const Text("Logout"),
+              child: const Text("Profile Page"),
             ),
           ],
         ),

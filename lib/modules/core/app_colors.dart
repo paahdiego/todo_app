@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/modules/theme/theme.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF109310);
-  static const Color secondary = Color(0xFF72B01D);
+  static const Color primary = Color(0xFF003566);
+  static const Color secondary = Color(0xFFffc300);
   //Light Theme
   static const Color backgroundColorLight = white;
   static const Color subBackgroundColorLight = Color(0xFFD5D5D5);
@@ -17,11 +17,11 @@ class AppColors {
   static const Color drawerBackgroundColorDark = Color(0xFF141414);
 
   static const Color white = Color(0xFFfaf9f9);
-  static const Color black = Color(0xFF0B090A);
+  static const Color black = Color(0xFF000814);
   static const Color transparent = Colors.transparent;
 
   static const Color warning = Color(0xFFF2C14E);
-  static const Color error = Color(0xFFf78e31);
+  static const Color error = Color(0xFFF80000);
 
   static const backgroundGradientDark = LinearGradient(
     stops: [0.8, 1.0],

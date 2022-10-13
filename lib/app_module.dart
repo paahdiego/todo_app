@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/modules/home/home_page.dart';
+import 'package:todo_app/modules/profile/profile_page.dart';
 
 import 'modules/splash/splash_page.dart';
 
@@ -9,6 +10,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, _) => const SplashPage()),
         ChildRoute('/home', child: (context, _) => const HomePage()),
+        ChildRoute('/profile', child: (context, _) => const ProfilePage()),
         //Create Todo Page
       ];
 }
