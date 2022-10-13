@@ -9,5 +9,6 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, _) => const SplashPage()),
         ChildRoute('/home', child: (context, _) => const HomePage()),
+        //Create Todo Page
       ];
 }
