@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/app_controller.dart';
 
 import 'modules/theme/theme.dart';
 
@@ -13,6 +14,9 @@ class App extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<ThemeController>(
           create: (context) => ThemeController(),
+        ),
+        ChangeNotifierProvider<AppController>(
+          create: (context) => AppController(),
         ),
       ],
       builder: (context, _) {

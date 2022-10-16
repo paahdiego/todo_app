@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/app_controller.dart';
 
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/modules/core/core.dart';
 import 'package:todo_app/modules/theme/theme_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  static const String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
     final themeController = ThemeController.instance(context);
+    final appController = AppController.instance(context);
+
     return AnimatedBuilder(
       builder: (context, _) {
         return Container(
@@ -44,11 +48,14 @@ class HomePage extends StatelessWidget {
                             Spacer(),
                             IconButton(
                               icon: Icon(
-                                Icons.mode_edit,
+                                Icons.dark_mode,
                                 size: 24,
+                                color: AppColors.blackOrWhite(context),
                               ),
-                              onPressed: () {},
-                            ),
+                              onPressed: () {
+                                themeController.changeTheme(context);
+                              },
+                            )
                           ],
                         ),
                         Row(
@@ -62,12 +69,12 @@ class HomePage extends StatelessWidget {
                             Spacer(),
                             IconButton(
                               icon: Icon(
-                                Icons.dark_mode,
+                                Icons.power_settings_new,
                                 size: 24,
                                 color: AppColors.blackOrWhite(context),
                               ),
                               onPressed: () {
-                                themeController.changeTheme(context);
+                                appController.logout(context);
                               },
                             )
                           ],

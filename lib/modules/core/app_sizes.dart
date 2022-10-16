@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 class AppSizes {
-  late ValueNotifier<DeviceType> deviceNotifier;
+  static double get defaultBorderRadiusSize => 16;
+
+  static double get defaultPaddingSize => 20;
+
+  static BorderRadius get defaultBorderRadius => BorderRadius.all(
+        Radius.circular(defaultBorderRadiusSize),
+      );
 
   DeviceType get deviceType => deviceNotifier.value;
-
-  late double displayWidth;
-  late double displayHeight;
-
-  late MediaQueryData mediaQuery;
-
   double get paddingTop => padding.top;
   double get paddingBottom => padding.bottom;
   EdgeInsets get padding => mediaQuery.padding;
   EdgeInsets get defaultPadding => EdgeInsets.all(defaultPaddingSize);
-  static double get defaultPaddingSize => 20;
-
   double get safeHeight => displayHeight - padding.top - padding.bottom;
 
-  static BorderRadius get defaultBorderRadius =>
-      const BorderRadius.all(Radius.circular(16));
+  late ValueNotifier<DeviceType> deviceNotifier;
+  late double displayWidth;
+  late double displayHeight;
+  late MediaQueryData mediaQuery;
 
   final BuildContext context;
 

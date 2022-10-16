@@ -40,6 +40,9 @@ dependencies:
   shared_preferences: ^2.0.15
   provider: ^6.0.4
   google_fonts: ^3.0.1
+  uuid: ^3.0.6
+  validatorless: ^1.2.3
+  overlay_support: ^2.0.1
 
 dev_dependencies:
   flutter_test:

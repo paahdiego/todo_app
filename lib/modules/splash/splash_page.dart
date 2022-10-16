@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+
+import 'package:todo_app/modules/auth/auth_controller.dart';
+import 'package:todo_app/shared/components/app_gradient_container.dart';
+import 'package:todo_app/shared/components/app_loading_icon.dart';
+import 'package:todo_app/shared/components/app_logo.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({
     Key? key,
   }) : super(key: key);
+
+  static const String routeName = "/";
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -15,16 +21,28 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
-      () => Modular.to.pushReplacementNamed('/home'),
+      () {
+        AuthController.isAuthenticated(context);
+      },
     );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: Text("Splash"),
+    return AppGradientContainer(
+      child: SafeArea(
+        child: Scaffold(
+          body: Column(
+            children: const [
+              Spacer(),
+              Center(child: AppLogo()),
+              SizedBox(height: 20),
+              AppLoadingIcon(),
+              Spacer(),
+            ],
+          ),
+        ),
       ),
     );
   }
