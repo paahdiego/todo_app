@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppSizes {
   static double get defaultBorderRadiusSize => 16;
 
-  static double get defaultPaddingSize => 20;
+  static double get defaultPaddingSize => 16;
 
   static BorderRadius get defaultBorderRadius => BorderRadius.all(
         Radius.circular(defaultBorderRadiusSize),

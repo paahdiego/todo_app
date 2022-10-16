@@ -11,7 +11,7 @@ class AppController extends ChangeNotifier {
     loggedUser = null;
   }
 
-  Future<void> logout(BuildContext context) async {
+  Future<void> logout() async {
     _clearUser();
     await AuthController.deauthenticate();
     Modular.to.pushReplacementNamed(SplashPage.routeName);
