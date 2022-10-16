@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/modules/notes/notes_state.dart';
+import 'package:todo_app/modules/notes/controllers/notes_state.dart';
 import 'package:todo_app/repositories/notes/notes_repository.dart';
 
 class NotesController {
@@ -15,13 +15,13 @@ class NotesController {
   NotesController(
     this.loggedUserId,
   ) {
-    initialize();
+    loadNotes();
   }
 
-  Future<void> initialize() async {
+  Future<void> loadNotes() async {
     state = NotesStateLoading();
 
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
 
     final notes = await notesRepository.list(loggedUserId: loggedUserId);
 
@@ -32,6 +32,4 @@ class NotesController {
 
     state = NotesStateEmpty();
   }
-
-  Future<void> createNote() async {}
 }

@@ -60,7 +60,10 @@ class NotesRepository {
     final notes = jsons!.map((element) => NoteModel.fromJson(element)).toList();
 
     if (loggedUserId != null) {
-      return notes.where((e) => e.createdBy == loggedUserId).toList();
+      final filteredNotes =
+          notes.where((e) => e.createdBy == loggedUserId).toList();
+
+      return filteredNotes;
     }
 
     return notes;

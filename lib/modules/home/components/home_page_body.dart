@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/app_controller.dart';
+import 'package:todo_app/models/note_model.dart';
 
 import 'package:todo_app/models/user_model.dart';
 import 'package:todo_app/modules/core/core.dart';
@@ -8,7 +12,8 @@ import 'package:todo_app/modules/home/components/home_page_header.dart';
 import 'package:todo_app/modules/home/components/notes_list.dart';
 import 'package:todo_app/modules/home/components/notes_section_header.dart';
 import 'package:todo_app/modules/notes/controllers/notes_controller.dart';
-import 'package:todo_app/modules/notes/notes_state.dart';
+import 'package:todo_app/modules/notes/controllers/notes_state.dart';
+import 'package:todo_app/modules/notes/pages/create_note_page.dart';
 import 'package:todo_app/modules/theme/theme_controller.dart';
 import 'package:todo_app/shared/components/app_loading_icon.dart';
 
@@ -64,7 +69,16 @@ class _HomePageBodyState extends State<HomePageBody> {
             child: Column(
               children: [
                 NotesSectionHeader(
-                  onAdd: () {},
+                  onAdd: () async {
+                    final response = await Modular.to.pushNamed(
+                      CreateNotePage.routeName,
+                      arguments: widget.loggedUser.id,
+                    );
+
+                    if (response != null && response.runtimeType == NoteModel) {
+                      notesController.loadNotes();
+                    }
+                  },
                 ),
                 const SizedBox(height: 10),
                 ValueListenableBuilder<NotesState>(
