@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/modules/auth/register/controllers/register_controller.dart';
+import 'package:todo_app/modules/auth/register/models/register_response.dart';
 import 'package:todo_app/modules/core/core.dart';
 import 'package:todo_app/shared/components/app_default_button.dart';
 import 'package:todo_app/shared/components/app_input_field.dart';
@@ -79,7 +80,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                   Validatorless.required("Digite sua senha"),
                 ]),
                 onFieldSubmitted: (String value) {
-                  registerController.register(context);
+                  registerController.register();
                 },
               ),
               const SizedBox(height: 20),
@@ -88,7 +89,11 @@ class _RegisterBodyState extends State<RegisterBody> {
                   Expanded(
                     child: TextButton(
                       onPressed: () {
-                        Modular.to.pop();
+                        Modular.to.pop(
+                          RegisterResponse(
+                            shouldAdjustControllers: false,
+                          ),
+                        );
                       },
                       child: const Text("voltar"),
                     ),
@@ -97,7 +102,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                   Expanded(
                     child: AppDefaultButton(
                       onPressed: () {
-                        registerController.register(context);
+                        registerController.register();
                       },
                       child: ValueListenableBuilder<PageState>(
                         valueListenable: registerController.pageStateNotifier,

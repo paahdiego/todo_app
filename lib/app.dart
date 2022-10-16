@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/app_controller.dart';
 
@@ -24,14 +25,16 @@ class App extends StatelessWidget {
 
         return Consumer<ThemeController>(
           builder: (context, _, __) {
-            return MaterialApp.router(
-              title: 'Todo App',
-              debugShowCheckedModeBanner: false,
-              theme: AppThemes.lightTheme(context),
-              darkTheme: AppThemes.darkTheme(context),
-              themeMode: themeController.themeMode,
-              routeInformationParser: Modular.routeInformationParser,
-              routerDelegate: Modular.routerDelegate,
+            return OverlaySupport.global(
+              child: MaterialApp.router(
+                title: 'Todo App',
+                debugShowCheckedModeBanner: false,
+                theme: AppThemes.lightTheme(context),
+                darkTheme: AppThemes.darkTheme(context),
+                themeMode: themeController.themeMode,
+                routeInformationParser: Modular.routeInformationParser,
+                routerDelegate: Modular.routerDelegate,
+              ),
             );
           },
         );
