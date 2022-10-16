@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/modules/auth/login/login_page.dart';
 import 'package:todo_app/modules/auth/register/register_page.dart';

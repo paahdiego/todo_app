@@ -2,10 +2,9 @@ import 'package:todo_app/repositories/auth/auth_repository.dart';
 import 'package:todo_app/repositories/user/user_repository.dart';
 import 'package:todo_app/shared/models/app_error.dart';
 import 'package:todo_app/shared/models/user_model.dart';
-import 'package:todo_app/shared/utils/app_notifications.dart';
 
 class AuthService {
-  Future<void> login({
+  Future<UserModel> login({
     required String email,
     required String password,
   }) async {
@@ -20,6 +19,7 @@ class AuthService {
     }
 
     AuthRepository.saveLoggedUser(user);
+    return user;
   }
 
   Future<UserModel> createAccount({

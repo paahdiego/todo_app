@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                               color: AppColors.blackOrWhite(context),
                               size: 48,
                             ),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                               icon: Icon(
                                 Icons.dark_mode,
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
                                 fontSize: 32,
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                               icon: Icon(
                                 Icons.power_settings_new,

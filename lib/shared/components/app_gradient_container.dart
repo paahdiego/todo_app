@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:todo_app/modules/core/core.dart';
 import 'package:todo_app/modules/theme/theme.dart';
 
