@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-class AppError {
+class AppErrorModel {
   final String message;
-  AppError({
+  AppErrorModel({
     required this.message,
   });
 
-  AppError copyWith({
+  AppErrorModel copyWith({
     String? message,
   }) {
-    return AppError(
+    return AppErrorModel(
       message: message ?? this.message,
     );
   }
@@ -20,25 +20,25 @@ class AppError {
     };
   }
 
-  factory AppError.fromMap(Map<String, dynamic> map) {
-    return AppError(
+  factory AppErrorModel.fromMap(Map<String, dynamic> map) {
+    return AppErrorModel(
       message: map['message'] ?? '',
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory AppError.fromJson(String source) =>
-      AppError.fromMap(json.decode(source));
+  factory AppErrorModel.fromJson(String source) =>
+      AppErrorModel.fromMap(json.decode(source));
 
   @override
-  String toString() => 'AppError(message: $message)';
+  String toString() => 'AppErrorModel(message: $message)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is AppError && other.message == message;
+    return other is AppErrorModel && other.message == message;
   }
 
   @override

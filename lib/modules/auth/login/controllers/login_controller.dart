@@ -15,11 +15,13 @@ class LoginController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future<void> login(BuildContext context) async {
+  Future<void> login() async {
     if (formKey.currentState!.validate()) {
       pageState = PageState.loading;
 
       final authService = AuthService();
+
+      await Future.delayed(const Duration(seconds: 3));
 
       try {
         await authService.login(

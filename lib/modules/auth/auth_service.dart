@@ -1,7 +1,7 @@
 import 'package:todo_app/repositories/auth/auth_repository.dart';
 import 'package:todo_app/repositories/user/user_repository.dart';
-import 'package:todo_app/shared/models/app_error.dart';
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/app_error_model.dart';
+import 'package:todo_app/models/user_model.dart';
 
 class AuthService {
   Future<UserModel> login({
@@ -13,7 +13,7 @@ class AuthService {
     final user = await userRepository.findByEmail(email: email);
 
     if (user == null || user.password != password) {
-      throw AppError(
+      throw AppErrorModel(
         message: 'usuário não encontrado ou credenciais incorretas',
       );
     }

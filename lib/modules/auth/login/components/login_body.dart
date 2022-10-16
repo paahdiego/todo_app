@@ -61,7 +61,7 @@ class _LoginBodyState extends State<LoginBody> {
                   Validatorless.required("Digite sua senha"),
                 ]),
                 onFieldSubmitted: (String value) {
-                  loginController.login(context);
+                  loginController.login();
                 },
               ),
               const SizedBox(height: 20),
@@ -91,7 +91,7 @@ class _LoginBodyState extends State<LoginBody> {
                   Expanded(
                     child: AppDefaultButton(
                       onPressed: () {
-                        loginController.login(context);
+                        loginController.login();
                       },
                       child: ValueListenableBuilder<PageState>(
                         valueListenable: loginController.pageStateNotifier,

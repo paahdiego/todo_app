@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/modules/auth/login/login_page.dart';
 import 'package:todo_app/modules/home/home_page.dart';
 import 'package:todo_app/repositories/auth/auth_repository.dart';
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/user_model.dart';
 
 class AuthController {
   static Future<void> isAuthenticated(BuildContext context) async {

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/user_model.dart';
 
 class RegisterResponse {
   final UserModel? user;

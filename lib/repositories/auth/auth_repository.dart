@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/user_model.dart';
 import 'package:todo_app/shared/utils/shared_preferences_keys.dart';
 
 class AuthRepository {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:todo_app/modules/core/core.dart';
-import 'package:todo_app/shared/models/app_error.dart';
+import 'package:todo_app/models/app_error_model.dart';
 
 class AppNotifications {
   static void simpleNotificationBanner({
@@ -16,8 +16,8 @@ class AppNotifications {
     String? statusCode,
   }) {
     String message = object.toString();
-    if (object.runtimeType == AppError) {
-      final apiError = object as AppError;
+    if (object.runtimeType == AppErrorModel) {
+      final apiError = object as AppErrorModel;
       message = apiError.message;
       errorType = "App Error";
     }

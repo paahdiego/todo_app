@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/shared/utils/shared_preferences_keys.dart';
-import 'package:todo_app/shared/models/app_error.dart';
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/app_error_model.dart';
+import 'package:todo_app/models/user_model.dart';
 import 'package:uuid/uuid.dart';
 
 class UserRepository {
@@ -35,7 +35,7 @@ class UserRepository {
     final exists = await findByEmail(email: email);
 
     if (exists != null) {
-      throw AppError(message: "usuário com esse e-mail já cadastrado");
+      throw AppErrorModel(message: "usuário com esse e-mail já cadastrado");
     }
 
     users.add(createUser);

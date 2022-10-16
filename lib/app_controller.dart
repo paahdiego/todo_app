@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/modules/auth/auth_controller.dart';
 import 'package:todo_app/modules/splash/splash_page.dart';
 
-import 'package:todo_app/shared/models/user_model.dart';
+import 'package:todo_app/models/user_model.dart';
 
 class AppController extends ChangeNotifier {
   void _clearUser() {
