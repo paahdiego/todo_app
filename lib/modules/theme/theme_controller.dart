@@ -4,7 +4,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/modules/theme/theme_model.dart';
 
 class ThemeController extends ChangeNotifier {
-  static ThemeController instance(context, {bool listen = false}) =>
+  static ThemeController instance(
+    BuildContext context, {
+    bool listen = false,
+  }) =>
       Provider.of<ThemeController>(context, listen: listen);
 
   final themeModeNotifier = ValueNotifier<ThemeMode>(ThemeMode.system);

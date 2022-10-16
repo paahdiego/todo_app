@@ -8,7 +8,11 @@ export 'theme_controller.dart';
 class AppThemes {
   static ThemeData darkTheme(BuildContext context) => ThemeData.dark().copyWith(
         primaryColor: AppColors.primary,
-        scaffoldBackgroundColor: AppColors.backgroundColorDark,
+        scaffoldBackgroundColor: AppColors.transparent,
+        appBarTheme: AppBarTheme.of(context).copyWith(
+          backgroundColor: AppColors.transparent,
+          elevation: 0.0,
+        ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             foregroundColor: AppColors.primary,
@@ -51,7 +55,10 @@ class AppThemes {
   static ThemeData lightTheme(BuildContext context) =>
       ThemeData.light().copyWith(
         primaryColor: AppColors.primary,
-        scaffoldBackgroundColor: AppColors.backgroundColorLight,
+        scaffoldBackgroundColor: AppColors.transparent,
+        appBarTheme: AppBarTheme.of(context).copyWith(
+          backgroundColor: AppColors.transparent,
+        ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             foregroundColor: AppColors.primary,

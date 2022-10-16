@@ -19,7 +19,7 @@ class AppSizes {
   double get safeHeight => displayHeight - padding.top - padding.bottom;
 
   static BorderRadius get defaultBorderRadius =>
-      const BorderRadius.all(Radius.circular(8));
+      const BorderRadius.all(Radius.circular(16));
 
   final BuildContext context;
 

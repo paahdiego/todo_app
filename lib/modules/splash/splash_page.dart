@@ -15,7 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
-      () => Modular.to.navigate('/home'),
+      () => Modular.to.pushReplacementNamed('/home'),
     );
     super.initState();
   }
