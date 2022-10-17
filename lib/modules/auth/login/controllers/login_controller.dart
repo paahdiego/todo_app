@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:todo_app/app_routes.dart';
 import 'package:todo_app/modules/auth/auth_service.dart';
-import 'package:todo_app/modules/splash/splash_page.dart';
+
 import 'package:todo_app/shared/utils/app_notifications.dart';
 
 class LoginController {
@@ -21,7 +22,7 @@ class LoginController {
 
       final authService = AuthService();
 
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 2));
 
       try {
         await authService.login(
@@ -29,7 +30,7 @@ class LoginController {
           password: passwordController.text,
         );
 
-        Modular.to.pushReplacementNamed(SplashPage.routeName);
+        Modular.to.pushReplacementNamed(AppRoutes.splash);
       } catch (e) {
         AppNotifications.errorNotificationBanner(e);
       }

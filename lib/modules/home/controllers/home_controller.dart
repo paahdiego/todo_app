@@ -20,8 +20,6 @@ class HomeController {
 
     final appController = AppController.instance(context);
 
-    await Future.delayed(const Duration(seconds: 2));
-
     final loggedUser = await AuthController.getLoggedUser();
 
     appController.loggedUser = loggedUser;

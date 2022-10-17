@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:todo_app/app_routes.dart';
 import 'package:todo_app/modules/auth/register/models/register_response.dart';
-import 'package:todo_app/modules/auth/register/register_page.dart';
 import 'package:todo_app/modules/core/core.dart';
 import 'package:todo_app/modules/auth/login/controllers/login_controller.dart';
 import 'package:todo_app/shared/components/app_default_button.dart';
@@ -70,7 +70,7 @@ class _LoginBodyState extends State<LoginBody> {
                   Expanded(
                     child: AppDefaultButton(
                       onPressed: () {
-                        Modular.to.pushNamed(RegisterPage.routeName).then(
+                        Modular.to.pushNamed(AppRoutes.register).then(
                           (value) {
                             if (value.runtimeType == RegisterResponse) {
                               final response = value as RegisterResponse;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/app_controller.dart';
 
 import 'package:todo_app/modules/core/core.dart';
 import 'package:todo_app/modules/home/components/home_page_body.dart';
@@ -10,8 +9,6 @@ import 'package:todo_app/shared/components/app_loading_icon.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-
-  static const String routeName = "/home";
 
   @override
   State<HomePage> createState() => _HomePageState();

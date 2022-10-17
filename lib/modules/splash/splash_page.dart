@@ -10,8 +10,6 @@ class SplashPage extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  static const String routeName = "/";
-
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
@@ -37,7 +35,7 @@ class _SplashPageState extends State<SplashPage> {
             children: const [
               Spacer(),
               Center(child: AppLogo()),
-              SizedBox(height: 20),
+              SizedBox(height: 50),
               AppLoadingIcon(),
               Spacer(),
             ],

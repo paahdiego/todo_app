@@ -5,8 +5,6 @@ import 'package:todo_app/shared/components/app_gradient_container.dart';
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
-  static const String routeName = "/register";
-
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }

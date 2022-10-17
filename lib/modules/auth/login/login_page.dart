@@ -5,8 +5,6 @@ import 'package:todo_app/shared/components/app_gradient_container.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  static const String routeName = "/login";
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }

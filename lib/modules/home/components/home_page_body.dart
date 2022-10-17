@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_app/app_controller.dart';
+import 'package:todo_app/app_routes.dart';
 import 'package:todo_app/models/note_model.dart';
 
 import 'package:todo_app/models/user_model.dart';
@@ -71,7 +72,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                 NotesSectionHeader(
                   onAdd: () async {
                     final response = await Modular.to.pushNamed(
-                      CreateNotePage.routeName,
+                      AppRoutes.createNote,
                       arguments: widget.loggedUser.id,
                     );
 

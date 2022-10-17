@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'package:todo_app/modules/auth/login/login_page.dart';
-import 'package:todo_app/modules/home/home_page.dart';
+import 'package:todo_app/app_routes.dart';
 import 'package:todo_app/repositories/auth/auth_repository.dart';
 import 'package:todo_app/models/user_model.dart';
 
@@ -11,9 +9,9 @@ class AuthController {
     final isAuthenticated = await AuthRepository.isAuthenticated();
 
     if (isAuthenticated) {
-      Modular.to.pushReplacementNamed(HomePage.routeName);
+      Modular.to.pushReplacementNamed(AppRoutes.home);
     } else {
-      Modular.to.pushReplacementNamed(LoginPage.routeName);
+      Modular.to.pushReplacementNamed(AppRoutes.login);
     }
   }
 

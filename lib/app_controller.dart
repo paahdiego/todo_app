@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/app_routes.dart';
 import 'package:todo_app/modules/auth/auth_controller.dart';
-import 'package:todo_app/modules/splash/splash_page.dart';
 
 import 'package:todo_app/models/user_model.dart';
 
@@ -14,7 +14,7 @@ class AppController extends ChangeNotifier {
   Future<void> logout() async {
     _clearUser();
     await AuthController.deauthenticate();
-    Modular.to.pushReplacementNamed(SplashPage.routeName);
+    Modular.to.pushReplacementNamed(AppRoutes.splash);
   }
 
   static AppController instance(BuildContext context, {bool listen = false}) =>

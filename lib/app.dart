@@ -21,13 +21,11 @@ class App extends StatelessWidget {
         ),
       ],
       builder: (context, _) {
-        final themeController = ThemeController.instance(context, listen: true);
-
         return Consumer<ThemeController>(
-          builder: (context, _, __) {
+          builder: (context, themeController, __) {
             return OverlaySupport.global(
               child: MaterialApp.router(
-                title: 'Todo App',
+                title: 'Notes App',
                 debugShowCheckedModeBanner: false,
                 theme: AppThemes.lightTheme(context),
                 darkTheme: AppThemes.darkTheme(context),

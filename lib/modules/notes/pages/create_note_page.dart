@@ -9,8 +9,6 @@ class CreateNotePage extends StatefulWidget {
     required this.loggedUserId,
   }) : super(key: key);
 
-  static const String routeName = "/create-note";
-
   final String loggedUserId;
 
   @override
